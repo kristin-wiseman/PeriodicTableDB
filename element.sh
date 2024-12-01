@@ -9,7 +9,7 @@ elif [[ $1 =~ ^[0-9]+$ ]]; then
   QUERY_RESULT=$($PSQL "SELECT * FROM elements WHERE atomic_number = $1;")
   
   if [[ -z $QUERY_RESULT ]]; then
-    echo -e "\nI could not find that element in the database."
+    echo "I could not find that element in the database."
   else
     # query properties table
     echo ""
@@ -24,7 +24,7 @@ else
     
     # if still empty, it doesn't exist
     if [[ -z $QUERY_RESULT ]]; then
-      echo -e "\nI could not find that element in the database."
+      echo "I could not find that element in the database."
     else
       # query properties table w/ results from name.
       echo ""
